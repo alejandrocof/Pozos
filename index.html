@@ -81,6 +81,9 @@
 		text+="Plomo: "+pozo["PB_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_PB"]+")<br>";
 		text+="Manganeso: "+pozo["MN_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_MN"]+")<br>";
 		text+="Hierro: "+pozo["FE_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_FE"]+")";
+		if( pozo["CONTAMINANTES"]!=="" ){
+			text+="<br>Contaminantes: "+pozo["CONTAMINANTES"];
+		}
 		if( text.includes("FAAP") ){
 			text+="<br><br>*FAAP = Fuente de Abastecimiento de Agua Potable";
 		}
