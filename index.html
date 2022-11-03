@@ -66,21 +66,31 @@
 		
 		
 		let text="Clave: "+pozo.CLAVE+"<br>";
-		text+="Alcalinidad: "+pozo["ALC_mg/L"]+"ppm ("+pozo["CALIDAD_ALC"]+")<br>";
-		text+="STD: "+pozo["SDT_M_mg/L"]+"ppm ("+pozo["CALIDAD_SDT_salin"]+")<br>";
-		text+="Fluoruros: "+pozo["FLUORUROS_mg/L"]+"ppm ("+pozo["CALIDAD_FLUO"]+")<br>";
-		text+="Dureza: "+pozo["DUR_mg/L"]+"ppm ("+pozo["CALIDAD_DUR"]+")<br>";
-		text+="Coliformes: "+pozo["COLI_FEC_NMP/100_mL"]+"NMP/100_mL ("+pozo["CALIDAD_COLI_FEC"]+")<br>";
-		
-		
-		text+="Nitrogeno: "+pozo["N_NO3_mg/L"]+"ppm ("+pozo["CALIDAD_N_NO3"]+")<br>";
-		text+="Arsenico: "+pozo["AS_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_AS"]+")<br>";
-		text+="Cadmio: "+pozo["CD_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_CD"]+")<br>";
-		text+="Cromo: "+pozo["CR_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_CR"]+")<br>";
-		text+="Mercurio: "+pozo["HG_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_HG"]+")<br>";
-		text+="Plomo: "+pozo["PB_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_PB"]+")<br>";
-		text+="Manganeso: "+pozo["MN_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_MN"]+")<br>";
-		text+="Hierro: "+pozo["FE_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_FE"]+")";
+		// text+="Alcalinidad: "+pozo["ALC_mg/L"]+"ppm ("+pozo["CALIDAD_ALC"]+")<br>";
+		text+=`Alcalinidad:${+(pozo["ALC_mg/L"]==="")?" Sin datos":pozo["ALC_mg/L"]+"ppm ("+pozo["CALIDAD_ALC"]+")"}<br>`;
+		// text+="STD: "+pozo["SDT_M_mg/L"]+"ppm ("+pozo["CALIDAD_SDT_salin"]+")<br>";
+		text+=`STD:${+(pozo["SDT_M_mg/L"]==="")?" Sin datos":pozo["SDT_M_mg/L"]+"ppm ("+pozo["CALIDAD_SDT_salin"]+")"}<br>`;
+		// text+="Fluoruros: "+pozo["FLUORUROS_mg/L"]+"ppm ("+pozo["CALIDAD_FLUO"]+")<br>";
+		text+=`Fluoruros:${+(pozo["FLUORUROS_mg/L"]==="")?" Sin datos":pozo["FLUORUROS_mg/L"]+"ppm ("+pozo["CALIDAD_FLUO"]+")"}<br>`;
+		// text+="Dureza: "+pozo["DUR_mg/L"]+"ppm ("+pozo["CALIDAD_DUR"]+")<br>";
+		text+=`Dureza:${+(pozo["DUR_mg/L"]==="")?" Sin datos":pozo["DUR_mg/L"]+"ppm ("+pozo["CALIDAD_DUR"]+")"}<br>`;
+		// text+="Coliformes: "+pozo["COLI_FEC_NMP/100_mL"]+"NMP/100_mL ("+pozo["CALIDAD_COLI_FEC"]+")<br>";
+		text+=`Coliformes:${+(pozo["COLI_FEC_NMP/100_mL"]==="")?" Sin datos":pozo["COLI_FEC_NMP/100_mL"]+"ppm ("+pozo["CALIDAD_COLI_FEC"]+")"}<br>`;
+		// text+="Nitrogeno: "+pozo["N_NO3_mg/L"]+"ppm ("+pozo["CALIDAD_N_NO3"]+")<br>";
+		text+=`Nitrogeno:${+(pozo["N_NO3_mg/L"]==="")?" Sin datos":pozo["N_NO3_mg/L"]+"ppm ("+pozo["CALIDAD_N_NO3"]+")"}<br>`;
+		// text+="Arsenico: "+pozo["AS_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_AS"]+")<br>";
+		text+=`Arsenico:${+(pozo["AS_TOT_mg/L"]==="")?" Sin datos":pozo["AS_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_AS"]+")"}<br>`;
+		// text+="Cadmio: "+pozo["CD_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_CD"]+")<br>";
+		text+=`Cadmio:${+(pozo["CD_TOT_mg/L"]==="")?" Sin datos":pozo["CD_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_CD"]+")"}<br>`;
+		// text+="Cromo: "+pozo["CR_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_CR"]+")<br>";
+		text+=`Cromo:${+(pozo["CR_TOT_mg/L"]==="")?" Sin datos":pozo["CR_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_CR"]+")"}<br>`;
+		// text+="Mercurio: "+pozo["HG_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_HG"]+")<br>";
+		text+=`Mercurio:${+(pozo["HG_TOT_mg/L"]==="")?" Sin datos":pozo["HG_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_HG"]+")"}<br>`;
+		// text+="Plomo: "+pozo["PB_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_PB"]+")<br>";
+		text+=`Plomo:${+(pozo["PB_TOT_mg/L"]==="")?" Sin datos":pozo["PB_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_PB"]+")"}<br>`;
+		// text+="Manganeso: "+pozo["MN_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_MN"]+")<br>";
+		text+=`Manganeso:${+(pozo["MN_TOT_mg/L"]==="")?" Sin datos":pozo["MN_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_MN"]+")"}<br>`;
+		text+=`Hierro:${+(pozo["FE_TOT_mg/L"]==="")?" Sin datos":pozo["FE_TOT_mg/L"]+"ppm ("+pozo["CALIDAD_FE"]+")"}`;
 		if( pozo["CONTAMINANTES"]!=="" ){
 			text+="<br>Contaminantes: "+pozo["CONTAMINANTES"];
 		}
@@ -92,7 +102,13 @@
 			const mmarcador = L.marker([pozo.LATITUD, pozo.LONGITUD], {icon: marcadorRojoIcon}).bindPopup(text).addTo(map);
 		}
 		else if(pozo["SEMAFORO"]=="Verde"){
-			const mmarcador = L.marker([pozo.LATITUD, pozo.LONGITUD], {icon: marcadorVerdeIcon}).bindPopup(text).addTo(map);
+			if( text.includes("Sin datos") ){
+				const mmarcador = L.marker([pozo.LATITUD, pozo.LONGITUD], {icon: marcadorIcon}).bindPopup(text).addTo(map);
+			}
+			else{
+				const mmarcador = L.marker([pozo.LATITUD, pozo.LONGITUD], {icon: marcadorVerdeIcon}).bindPopup(text).addTo(map);
+			}
+			
 		}
 		else if(pozo["SEMAFORO"]=="Amarillo"){
 			const mmarcador = L.marker([pozo.LATITUD, pozo.LONGITUD], {icon: marcadorAmarilloIcon}).bindPopup(text).addTo(map);
